@@ -1,0 +1,18 @@
+--- glib/glib/gdate.c.orig	2016-01-24 13:51:38.000000000 -0800
++++ glib/glib/gdate.c	2016-07-10 00:18:28.007331745 -0700
+@@ -2439,6 +2439,9 @@
+  *
+  * Returns: number of characters written to the buffer, or 0 the buffer was too small
+  */
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Wformat-nonliteral"
++
+ gsize
+ g_date_strftime (gchar       *s,
+                  gsize        slen,
+@@ -2549,3 +2552,5 @@
+   return retval;
+ #endif
+ }
++
++#pragma GCC diagnostic pop

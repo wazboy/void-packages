@@ -1,7 +1,7 @@
 # Template file for 'glibc'
 pkgname=glibc
 version=2.23
-revision=1
+revision=2
 bootstrap=yes
 short_desc="The GNU C library"
 maintainer="Juan RP <xtraeme@voidlinux.eu>"
@@ -105,6 +105,7 @@ do_configure() {
 		--enable-stack-guard-randomization \
 		--without-selinux --without-cvs --without-gd \
 		--disable-lock-elision \
+		--disable-werror \
 		libc_cv_rootsbindir=/usr/bin \
 		libc_cv_rtlddir=${_libdir} libc_cv_slibdir=${_libdir}
 }
